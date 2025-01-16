@@ -85,11 +85,28 @@ export const projects: Project[] = [
   }
 ]
 
-export const research = [
+export type Research = {
+  title: string
+  type: string
+  institution: string
+  link: string
+  slug: string
+  abstract?: string
+  keyFindings?: string
+  methodology?: string
+  conclusion?: string
+  publicationDate?: string
+  collaborators?: string[]
+}
+
+export const research: Research[] = [
   {
     title: 'The Influence of Covid-19 on e-commerce activity and Trends',
     type: 'Research paper',
     institution: 'University of Derby',
-    link: '#thesis'
+    link: '#thesis',
+    slug: 'covid-ecommerce-trends',
+    abstract: 'Coming soon...',
+    keyFindings: 'Coming soon...'
   }
 ] 

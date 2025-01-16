@@ -1,13 +1,7 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
-
-type Research = {
-  title: string
-  type: string
-  institution: string
-  link: string
-}
+import { Research } from '@/app/data/portfolio'
 
 export default function ResearchTable({ research }: { research: Research[] }): React.ReactElement {
   return (
@@ -29,7 +23,7 @@ export default function ResearchTable({ research }: { research: Research[] }): R
               <td className="py-6 text-sm">{item.institution}</td>
               <td className="py-6 text-right">
                 <Link 
-                  href={item.link}
+                  href={`/research/${item.slug}`}
                   className="text-sm hover:underline underline-offset-4"
                 >
                   View Research

@@ -31,7 +31,7 @@ export default function ProjectTable({ projects }: { projects: Project[] }): Rea
                   {project.isPrivate ? (
                     <button
                       onClick={() => setSelectedProject(project.company)}
-                      className="text-sm hover:underline underline-offset-4"
+                      className="text-sm text-gray-500 hover:text-gray-800 hover:underline underline-offset-4 transition-colors"
                     >
                       Upon Request
                     </button>

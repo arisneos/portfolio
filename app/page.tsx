@@ -25,12 +25,12 @@ export default function Home(): React.ReactElement {
       </section>
 
       <section className="space-y-6">
-        <h2 className="text-lg">Select Projects:</h2>
+        <h2 className="text-lg">Projects</h2>
         <ProjectTable projects={projects} />
       </section>
 
       <section className="space-y-6">
-        <h2 className="text-lg">Select Research:</h2>
+        <h2 className="text-lg">Research</h2>
         <ResearchTable research={research} />
       </section>
     </div>
