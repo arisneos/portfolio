@@ -10,6 +10,12 @@ type Props = {
   }
 }
 
+export async function generateStaticParams() {
+  return research.map((item) => ({
+    slug: item.slug,
+  }))
+}
+
 export default function ResearchPage({ params }: Props) {
   const researchItem = research.find(r => r.link === `#${params.slug}`)
   

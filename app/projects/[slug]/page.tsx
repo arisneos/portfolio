@@ -10,29 +10,39 @@ type Props = {
   }
 }
 
+// Add this function to generate static paths
+export async function generateStaticParams() {
+  return projects
+    .filter(project => !project.isPrivate)  // Only generate pages for non-private projects
+    .map((project) => ({
+      slug: project.slug,
+    }))
+}
+
 export default function ProjectPage({ params }: Props) {
-  const project = projects.find(p => p.link === `#${params.slug}`)
+  const project = projects.find(p => p.link === params.slug || p.slug === params.slug)
   
   if (!project) {
     notFound()
   }
 
+  const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : ''
+
   const getMediaSrc = (num: number) => {
     const bases = [
-      `/images/${params.slug}/${num}`,
-      `/videos/${params.slug}/${num}`
+      `${basePath}/images/${params.slug}/${num}`,
+      `${basePath}/videos/${params.slug}/${num}`
     ]
     const extensions = ['.mp4', '.webm', '.gif', '.png', '.jpg']
     
-    // Return the first valid combination
-    return `${bases[0]}.png` // Default fallback
+    return `${bases[0]}.png`
   }
 
   return (
     <div className="flex flex-col md:flex-row gap-12 max-w-[1200px]">
       {/* Left Column - Text Content */}
       <div className="flex-1 space-y-8">
-        <Link href="./" className="text-sm hover:underline">← Back to projects</Link>
+        <Link href={`${basePath}/`} className="text-sm hover:underline">← Back to projects</Link>
         
         <div className="space-y-8">
           {/* Title Section */}
