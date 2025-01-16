@@ -18,8 +18,8 @@ export const projects: Project[] = [
   {
     company: 'WeatherXM',
     title: 'UX Design Lead',
-    type: 'Mobile Apps, Web Apps, Web3.0',
-    contributions: '0 --> 1 WeatherXM Pro, Research & Feature implementation on Mobile Apps.',
+    type: '0-->1 Product',
+    contributions: 'WeatherXM Pro, WeatherXM Mobile Apps',
     link: '#weatherxm',
     slug: 'weatherxm',
     description: 'Detailed project description will go here...',
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     isPrivate: false
   },
   {
-    company: 'Plaisio.gr / Buldoza.gr',
+    company: 'Buldoza.gr',
     title: 'Web Designer',
     type: 'E-Commerce',
     contributions: 'More than 5.000 successful web & newsletter campaigns & web automations. $4,2m in sales over 3 years',
@@ -77,8 +77,8 @@ export const projects: Project[] = [
   {
     company: 'Genesis Game Studios',
     title: 'Experience Designer',
-    type: 'Game Development',
-    contributions: '0 --> 1 game launch with 50k downloads in first 3 months',
+    type: '0-->1 Product',
+    contributions: 'Game design & development, launch with 50k downloads in first 3 months',
     link: '#Genesis',
     slug: 'Genesis',
     isPrivate: false
