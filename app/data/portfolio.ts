@@ -6,6 +6,7 @@ export type Project = {
   link: string
   slug: string
   duration?: string
+  isPrivate?: boolean
   description?: string
   challenge?: string
   solution?: string
@@ -25,7 +26,8 @@ export const projects: Project[] = [
     challenge: 'Key challenges faced...',
     solution: 'How we solved it...',
     impact: 'Business impact and results...',
-    technologies: ['Figma', 'React Native', 'Web3']
+    technologies: ['Figma', 'React Native', 'Web3'],
+    isPrivate: false
   },
   {
     company: 'UniSystems',
@@ -33,7 +35,8 @@ export const projects: Project[] = [
     type: 'B2B/SaaS',
     contributions: 'Led team of 5, 30% PoC acceptance rate increase in deliverables towards EU Institutions',
     link: '#unisystems',
-    slug: 'unisystems'
+    slug: 'unisystems',
+    isPrivate: true
   },
   {
     company: 'Celestino',
@@ -41,7 +44,8 @@ export const projects: Project[] = [
     type: 'E-Commerce',
     contributions: '10% CR increase, 7.5% user base growth, more than $1,2m in extra sales',
     link: '#celestino',
-    slug: 'celestino'
+    slug: 'celestino',
+    isPrivate: false
   },
   {
     company: 'Praktiker',
@@ -49,7 +53,8 @@ export const projects: Project[] = [
     type: 'E-Commerce',
     contributions: 'Increased user engagement with e-commerce portal by 225%, Kept sales stable through Covid-19',
     link: '#praktiker',
-    slug: 'praktiker'
+    slug: 'praktiker',
+    isPrivate: false
   },
   {
     company: 'N.I. Minoglou',
@@ -57,7 +62,8 @@ export const projects: Project[] = [
     type: 'E-Commerce',
     contributions: 'Led user research & design, increased CR by 20% yearly.',
     link: '#minoglou',
-    slug: 'minoglou'
+    slug: 'minoglou',
+    isPrivate: false
   },
   {
     company: 'Plaisio.gr / Buldoza.gr',
@@ -65,7 +71,8 @@ export const projects: Project[] = [
     type: 'E-Commerce',
     contributions: 'More than 5.000 successful web & newsletter campaigns & web automations. $4,2m in sales over 3 years',
     link: '#buldoza',
-    slug: 'buldoza'
+    slug: 'buldoza',
+    isPrivate: false
   },
   {
     company: 'Genesis Game Studios',
@@ -73,7 +80,8 @@ export const projects: Project[] = [
     type: 'Game Development',
     contributions: '0 --> 1 game launch with 50k downloads in first 3 months',
     link: '#Genesis',
-    slug: 'Genesis'
+    slug: 'Genesis',
+    isPrivate: false
   }
 ]
 
