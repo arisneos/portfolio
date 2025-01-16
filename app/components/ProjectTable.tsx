@@ -43,7 +43,9 @@ export default function ProjectTable({ projects }: { projects: Project[] }): Rea
                     </button>
                   ) : (
                     <Link 
-                      href={`${basePath}/projects/${project.slug}`}
+                      href={process.env.NODE_ENV === 'production' 
+                        ? `/portfolio/projects/${project.slug}`
+                        : `/projects/${project.slug}`}
                       className="text-sm hover:underline underline-offset-4 ml-auto inline-block"
                     >
                       View Project

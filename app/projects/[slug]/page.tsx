@@ -29,9 +29,10 @@ export default function ProjectPage({ params }: Props) {
   const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : ''
 
   const getMediaSrc = (num: number) => {
+    const prefix = process.env.NODE_ENV === 'production' ? '/portfolio' : ''
     const bases = [
-      `${basePath}/images/${params.slug}/${num}`,
-      `${basePath}/videos/${params.slug}/${num}`
+      `${prefix}/images/${params.slug}/${num}`,
+      `${prefix}/videos/${params.slug}/${num}`
     ]
     const extensions = ['.mp4', '.webm', '.gif', '.png', '.jpg']
     
@@ -42,7 +43,12 @@ export default function ProjectPage({ params }: Props) {
     <div className="flex flex-col md:flex-row gap-12 max-w-[1200px]">
       {/* Left Column - Text Content */}
       <div className="flex-1 space-y-8">
-        <Link href={`${basePath}/`} className="text-sm hover:underline">← Back to projects</Link>
+        <Link 
+          href={process.env.NODE_ENV === 'production' ? '/portfolio' : '/'} 
+          className="text-sm hover:underline"
+        >
+          ← Back to projects
+        </Link>
         
         <div className="space-y-8">
           {/* Title Section */}
