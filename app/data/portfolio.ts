@@ -5,6 +5,7 @@ export type Project = {
   contributions: string
   link: string
   slug: string
+  duration?: string
   description?: string
   challenge?: string
   solution?: string
