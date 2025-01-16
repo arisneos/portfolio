@@ -26,16 +26,11 @@ export default function ProjectPage({ params }: Props) {
     notFound()
   }
 
-  const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : ''
-
   const getMediaSrc = (num: number) => {
-    const prefix = process.env.NODE_ENV === 'production' ? '/portfolio' : ''
     const bases = [
-      `${prefix}/images/${params.slug}/${num}`,
-      `${prefix}/videos/${params.slug}/${num}`
+      `/images/${params.slug}/${num}`,
+      `/videos/${params.slug}/${num}`
     ]
-    const extensions = ['.mp4', '.webm', '.gif', '.png', '.jpg']
-    
     return `${bases[0]}.png`
   }
 
@@ -44,7 +39,7 @@ export default function ProjectPage({ params }: Props) {
       {/* Left Column - Text Content */}
       <div className="flex-1 space-y-8">
         <Link 
-          href={process.env.NODE_ENV === 'production' ? '/portfolio' : '/'} 
+          href="/" 
           className="text-sm hover:underline"
         >
           ← Back to projects

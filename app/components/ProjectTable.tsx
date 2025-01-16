@@ -3,12 +3,9 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { Project } from '@/app/data/portfolio'
 import ContactDialog from './ContactDialog'
-import { usePathname } from 'next/navigation'
 
 export default function ProjectTable({ projects }: { projects: Project[] }): React.ReactElement {
   const [selectedProject, setSelectedProject] = useState<string | null>(null)
-  const pathname = usePathname()
-  const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : ''
 
   return (
     <>
@@ -43,9 +40,7 @@ export default function ProjectTable({ projects }: { projects: Project[] }): Rea
                     </button>
                   ) : (
                     <Link 
-                      href={process.env.NODE_ENV === 'production' 
-                        ? `/portfolio/projects/${project.slug}`
-                        : `/projects/${project.slug}`}
+                      href={`/projects/${project.slug}`}
                       className="text-sm hover:underline underline-offset-4 ml-auto inline-block"
                     >
                       View Project
