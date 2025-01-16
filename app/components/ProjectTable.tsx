@@ -1,14 +1,7 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
-
-type Project = {
-  company: string
-  title: string
-  type: string
-  contributions: string
-  link: string
-}
+import { Project } from '@/app/data/portfolio'
 
 export default function ProjectTable({ projects }: { projects: Project[] }): React.ReactElement {
   return (
@@ -32,7 +25,7 @@ export default function ProjectTable({ projects }: { projects: Project[] }): Rea
               <td className="py-6 text-sm">{project.contributions}</td>
               <td className="py-6 text-right">
                 <Link 
-                  href={project.link}
+                  href={`/projects/${project.slug}`}
                   className="text-sm hover:underline underline-offset-4"
                 >
                   View Project
