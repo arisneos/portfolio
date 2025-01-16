@@ -43,7 +43,7 @@ export default function MediaDisplay({ src, alt, type = 'image' }: MediaProps) {
   return (
     <div className="relative aspect-video bg-gray-100 rounded-lg">
       <Image
-        src={src}
+        src={src.startsWith('/') ? `./portfolio${src}` : src}
         alt={alt}
         fill
         className="object-cover rounded-lg"

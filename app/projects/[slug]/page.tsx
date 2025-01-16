@@ -32,7 +32,7 @@ export default function ProjectPage({ params }: Props) {
     <div className="flex flex-col md:flex-row gap-12 max-w-[1200px]">
       {/* Left Column - Text Content */}
       <div className="flex-1 space-y-8">
-        <Link href="/" className="text-sm hover:underline">← Back to projects</Link>
+        <Link href="./" className="text-sm hover:underline">← Back to projects</Link>
         
         <div className="space-y-8">
           {/* Title Section */}

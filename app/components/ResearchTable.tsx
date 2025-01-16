@@ -23,7 +23,7 @@ export default function ResearchTable({ research }: { research: Research[] }): R
               <td className="py-6 text-sm">{item.institution}</td>
               <td className="py-6 text-right">
                 <Link 
-                  href={`/research/${item.slug}`}
+                  href={`./research/${item.slug}`}
                   className="text-sm hover:underline underline-offset-4"
                 >
                   View Research

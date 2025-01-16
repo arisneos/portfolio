@@ -40,7 +40,7 @@ export default function ProjectTable({ projects }: { projects: Project[] }): Rea
                     </button>
                   ) : (
                     <Link 
-                      href={`/projects/${project.slug}`}
+                      href={`./projects/${project.slug}`}
                       className="text-sm hover:underline underline-offset-4 ml-auto inline-block"
                     >
                       View Project
