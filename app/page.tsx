@@ -8,7 +8,7 @@ export default function Home(): React.ReactElement {
   return (
     <div className="space-y-16 max-w-[1200px]">
       <section className="space-y-6">
-        <h1 className="text-xl font-medium">Aris Neos</h1>
+        <h1 className="text-xl font-medium text-gray-600">Aris Neos</h1>
         <p className="text-sm text-gray-600 max-w-[640px] leading-relaxed">
           I am a product designer & manager with over ten years of experience in creating User Experiences 
           and managing teams. I focus on building intuitive interfaces and data-driven solutions 
@@ -25,12 +25,12 @@ export default function Home(): React.ReactElement {
       </section>
 
       <section className="space-y-6">
-        <h2 className="text-lg">Projects</h2>
+        <h2 className="text-lg text-gray-500">Projects</h2>
         <ProjectTable projects={projects} />
       </section>
 
       <section className="space-y-6">
-        <h2 className="text-lg">Research</h2>
+        <h2 className="text-lg text-gray-500">Research</h2>
         <ResearchTable research={research} />
       </section>
     </div>

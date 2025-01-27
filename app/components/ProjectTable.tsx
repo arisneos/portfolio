@@ -13,10 +13,10 @@ export default function ProjectTable({ projects }: { projects: Project[] }): Rea
         <table className="w-full">
           <thead>
             <tr className="border-b border-gray-200">
-              <th className="py-2 pr-8 text-left font-normal w-[15%] text-sm">Company</th>
-              <th className="py-2 pr-8 text-left font-normal w-[20%] text-sm">Title</th>
-              <th className="py-2 pr-8 text-left font-normal w-[15%] text-sm">Project Type</th>
-              <th className="py-2 text-left font-normal w-[40%] text-sm">Contributions</th>
+              <th className="py-2 pr-8 text-left font-normal w-[15%] text-sm text-gray-500">Company</th>
+              <th className="py-2 pr-8 text-left font-normal w-[20%] text-sm text-gray-500">Title</th>
+              <th className="py-2 pr-8 text-left font-normal w-[15%] text-sm text-gray-500">Project Type</th>
+              <th className="py-2 text-left font-normal w-[40%] text-sm text-gray-500">Contributions</th>
               <th className="py-2 pl-8 text-right font-normal w-[10%]"></th>
             </tr>
           </thead>

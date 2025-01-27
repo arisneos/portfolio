@@ -9,9 +9,9 @@ export default function ResearchTable({ research }: { research: Research[] }): R
       <table className="w-full table-fixed">
         <thead>
           <tr className="border-b border-gray-200">
-            <th className="py-4 text-left font-normal w-2/5 md:w-[45%] text-sm">Title</th>
-            <th className="py-4 text-left font-normal w-1/5 md:w-[20%] text-sm">Type</th>
-            <th className="py-4 text-left font-normal w-1/5 md:w-[25%] text-sm">Institution</th>
+            <th className="py-4 text-left font-normal w-2/5 md:w-[45%] text-sm text-gray-400">Title</th>
+            <th className="py-4 text-left font-normal w-1/5 md:w-[20%] text-sm text-gray-400">Type</th>
+            <th className="py-4 text-left font-normal w-1/5 md:w-[25%] text-sm text-gray-400">Institution</th>
             <th className="py-4 text-left font-normal w-[10%]"></th>
           </tr>
         </thead>
