@@ -31,7 +31,7 @@ export const projects: Project[] = [
   },
   {
     company: 'UniSystems',
-    title: 'Team Lead, UX/Product Design',
+    title: 'Team Lead, UX Design',
     type: 'B2B/SaaS',
     contributions: 'Led team of 5, 30% PoC acceptance rate increase in deliverables towards EU Institutions',
     link: 'unisystems',
@@ -40,7 +40,7 @@ export const projects: Project[] = [
   },
   {
     company: 'Celestino',
-    title: 'E-Commerce Team Lead, UX/Product Design',
+    title: 'Team Lead, UX Design',
     type: 'E-Commerce',
     contributions: '10% CR increase, 7.5% user base growth, more than $1,2m in extra sales',
     link: 'celestino',
