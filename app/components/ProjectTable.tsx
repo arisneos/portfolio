@@ -22,9 +22,14 @@ export default function ProjectTable({ projects }: { projects: Project[] }): Rea
           </thead>
           <tbody>
             {projects.map((project, index) => (
-              <tr key={project.company} 
-                  className={`border-b border-gray-200 ${index === projects.length - 1 ? 'border-b-0' : ''} 
-                             ${project.isPrivate ? 'text-gray-500' : ''}`}
+              <tr 
+                key={project.company} 
+                className={`
+                  group
+                  ${project.isPrivate ? 'text-gray-500' : ''}
+                  ${!project.isPrivate ? 'hover:bg-gray-50 hover:transform hover:-translate-y-1 hover:shadow-lg transition-all duration-200' : ''}
+                  cursor-pointer
+                `}
               >
                 <td className="py-3 pr-8 text-sm">{project.company}</td>
                 <td className="py-3 pr-8 text-sm">{project.title}</td>

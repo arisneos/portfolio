@@ -26,7 +26,7 @@ export const projects: Project[] = [
     challenge: 'Key challenges faced...',
     solution: 'How we solved it...',
     impact: 'Business impact and results...',
-    technologies: ['Figma', 'React Native', 'Web3'],
+    technologies: ['Figma', 'Vue.js', 'Web3'],
     isPrivate: false
   },
   {
