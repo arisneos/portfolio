@@ -22,6 +22,7 @@ export const projects: Project[] = [
     contributions: 'WeatherXM Pro, WeatherXM Mobile Apps',
     link: 'weatherxm',
     slug: 'weatherxm',
+    duration: 'January 2024 - Present',
     description: 'Detailed project description will go here...',
     challenge: 'Key challenges faced...',
     solution: 'How we solved it...',
@@ -72,6 +73,7 @@ export const projects: Project[] = [
     contributions: 'More than 5.000 successful web & newsletter campaigns & web automations. $4,2m in sales over 3 years',
     link: 'buldoza',
     slug: 'buldoza',
+    duration: 'April 2013 - October 2018',
     isPrivate: false
   },
   {
@@ -81,6 +83,7 @@ export const projects: Project[] = [
     contributions: 'Game design & development, launch with 50k downloads in first 3 months',
     link: 'Genesis',
     slug: 'Genesis',
+    duration: 'April 2013 - April 2016',
     isPrivate: false
   }
 ]
