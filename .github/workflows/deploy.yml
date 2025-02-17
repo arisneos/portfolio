@@ -19,16 +19,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'npm'
+          cache: 'yarn'
+          
       - name: Install dependencies
-        run: npm install
+        run: |
+          corepack enable
+          yarn install --immutable
+          
       - name: Build with Next.js
         run: |
           export NODE_ENV=production
-          npm run build
+          yarn build
+          
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
