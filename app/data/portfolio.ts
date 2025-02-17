@@ -38,8 +38,9 @@ export const projects: Project[] = [
     technologies: ['Figma', 'Vue.js', 'Web3'],
     isPrivate: false,
     links: [
-      { label: 'Website', url: 'https://weatherxm.com' },
-      { label: 'Mobile App', url: 'https://apps.apple.com/weatherxm' }
+      { label: 'WeatherXM Pro', url: 'https://pro.weatherxm.com' },
+      { label: 'Apple Store App', url: 'https://apps.apple.com/ca/app/weatherxm/id1629841929' },
+      { label: 'Play Store App', url: 'https://play.google.com/store/apps/details?id=com.weatherxm.app' }
     ]
   },
   {
@@ -70,7 +71,7 @@ export const projects: Project[] = [
     contributions: 'Increased user engagement with e-commerce portal by 225%, Kept sales stable through Covid-19',
     link: 'praktiker',
     slug: 'praktiker',
-    isPrivate: false,
+    isPrivate: true,
     links: [
       { label: 'Website', url: 'https://praktiker.gr' }
     ]
@@ -107,7 +108,7 @@ export const projects: Project[] = [
     duration: 'April 2013 - April 2016',
     isPrivate: false,
     links: [
-      { label: 'Windows Store', url: 'https://www.microsoft.com/el-gr/p/the-lurker/9nblggh5x2kd?&activetab=pivot:overviewtab' },
+      { label: 'Play the game', url: 'https://www.microsoft.com/el-gr/p/the-lurker/9nblggh5x2kd?&activetab=pivot:overviewtab' },
     ],
     youtubeVideoId: 'https://youtu.be/LVM84YF3bMk'
   }

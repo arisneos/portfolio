@@ -29,17 +29,27 @@ export default function ProjectPage({ params }: Props) {
   const getMediaSrc = (num: number) => {
     // Special case for Genesis project - first media is YouTube video
     if (params.slug === 'Genesis' && num === 1 && project.youtubeVideoId) {
+      // Extract YouTube ID from URL
+      const youtubeId = project.youtubeVideoId.split('/').pop()?.replace('youtu.be/', '')
       return {
         type: 'youtube' as const,
         src: '', // Not needed for YouTube
-        youtubeId: project.youtubeVideoId
+        youtubeId
       }
     }
 
-    // For all other projects, just return the image path
+    // For all other projects, return the image path with basePath consideration
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+    const slug = params.slug.toLowerCase() // Ensure case-insensitive matching
+    
+    // Try different extensions
+    const extensions = ['.jpeg', '.jpg', '.png']
+    const imagePath = `${basePath}/images/${slug}/${num}`
+    
     return {
       type: 'image' as const,
-      src: `/images/${params.slug}/${num}.jpg`,
+      src: `${imagePath}${extensions[0]}`, // Default to first extension
+      fallbackSrcs: extensions.slice(1).map(ext => `${imagePath}${ext}`), // Rest as fallbacks
       youtubeId: undefined
     }
   }

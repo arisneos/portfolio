@@ -7,10 +7,24 @@ type MediaProps = {
   alt: string
   type?: 'image' | 'youtube'
   youtubeId?: string
+  fallbackSrcs?: string[]
 }
 
-export default function MediaDisplay({ src, alt, type = 'image', youtubeId }: MediaProps) {
+export default function MediaDisplay({ src, alt, type = 'image', youtubeId, fallbackSrcs = [] }: MediaProps) {
+  const [currentSrc, setCurrentSrc] = React.useState(src)
+  const [fallbackIndex, setFallbackIndex] = React.useState(0)
   const [error, setError] = React.useState(false)
+
+  const handleImageError = () => {
+    if (fallbackIndex < fallbackSrcs.length) {
+      // Try next fallback
+      setCurrentSrc(fallbackSrcs[fallbackIndex])
+      setFallbackIndex(prev => prev + 1)
+    } else {
+      // All fallbacks exhausted
+      setError(true)
+    }
+  }
 
   if (error) {
     return (
@@ -23,12 +37,15 @@ export default function MediaDisplay({ src, alt, type = 'image', youtubeId }: Me
   }
 
   if (type === 'youtube' && youtubeId) {
+    // Clean the YouTube ID to ensure it's just the ID
+    const cleanYoutubeId = youtubeId.split('/').pop()?.replace('youtu.be/', '') || youtubeId
+    
     return (
       <div className="relative aspect-video rounded-lg overflow-hidden">
         <iframe
           width="100%"
           height="100%"
-          src={`https://www.youtube.com/embed/${youtubeId}`}
+          src={`https://www.youtube.com/embed/${cleanYoutubeId}`}
           title={alt}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
@@ -41,13 +58,13 @@ export default function MediaDisplay({ src, alt, type = 'image', youtubeId }: Me
   return (
     <div className="relative aspect-video bg-gray-100 rounded-lg">
       <Image
-        src={src}
+        src={currentSrc}
         alt={alt}
         fill
         className="object-cover rounded-lg"
-        onError={() => setError(true)}
+        onError={handleImageError}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        priority={src.includes('1.jpg')}
+        priority={currentSrc.includes('1.')}
       />
     </div>
   )
