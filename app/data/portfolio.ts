@@ -1,3 +1,8 @@
+export type ProjectLink = {
+  label: string
+  url: string
+}
+
 export type Project = {
   company: string
   title: string
@@ -12,6 +17,9 @@ export type Project = {
   solution?: string
   impact?: string
   technologies?: string[]
+  projectUrl?: string
+  links?: ProjectLink[]
+  youtubeVideoId?: string
 }
 
 export const projects: Project[] = [
@@ -28,7 +36,11 @@ export const projects: Project[] = [
     solution: 'How we solved it...',
     impact: 'Business impact and results...',
     technologies: ['Figma', 'Vue.js', 'Web3'],
-    isPrivate: false
+    isPrivate: false,
+    links: [
+      { label: 'Website', url: 'https://weatherxm.com' },
+      { label: 'Mobile App', url: 'https://apps.apple.com/weatherxm' }
+    ]
   },
   {
     company: 'UniSystems',
@@ -46,7 +58,10 @@ export const projects: Project[] = [
     contributions: '10% CR increase, 7.5% user base growth, more than $1,2m in extra sales',
     link: 'celestino',
     slug: 'celestino',
-    isPrivate: false
+    isPrivate: false,
+    links: [
+      { label: 'Website', url: 'https://celestino.gr' }
+    ]
   },
   {
     company: 'Praktiker',
@@ -55,7 +70,10 @@ export const projects: Project[] = [
     contributions: 'Increased user engagement with e-commerce portal by 225%, Kept sales stable through Covid-19',
     link: 'praktiker',
     slug: 'praktiker',
-    isPrivate: false
+    isPrivate: false,
+    links: [
+      { label: 'Website', url: 'https://praktiker.gr' }
+    ]
   },
   {
     company: 'N.I. Minoglou',
@@ -74,7 +92,10 @@ export const projects: Project[] = [
     link: 'buldoza',
     slug: 'buldoza',
     duration: 'April 2013 - October 2018',
-    isPrivate: false
+    isPrivate: false,
+    links: [
+      { label: 'Website', url: 'https://buldoza.gr' }
+    ]
   },
   {
     company: 'Genesis Game Studios',
@@ -84,7 +105,11 @@ export const projects: Project[] = [
     link: 'Genesis',
     slug: 'Genesis',
     duration: 'April 2013 - April 2016',
-    isPrivate: false
+    isPrivate: false,
+    links: [
+      { label: 'Windows Store', url: 'https://www.microsoft.com/el-gr/p/the-lurker/9nblggh5x2kd?&activetab=pivot:overviewtab' },
+    ],
+    youtubeVideoId: 'https://youtu.be/LVM84YF3bMk'
   }
 ]
 

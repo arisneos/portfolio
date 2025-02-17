@@ -3,9 +3,19 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { Project } from '@/app/data/portfolio'
 import ContactDialog from './ContactDialog'
+import { useRouter } from 'next/navigation'
 
 export default function ProjectTable({ projects }: { projects: Project[] }): React.ReactElement {
   const [selectedProject, setSelectedProject] = useState<string | null>(null)
+  const router = useRouter()
+
+  const handleRowClick = (project: Project) => {
+    if (project.isPrivate) {
+      setSelectedProject(project.company)
+    } else {
+      router.push(`/projects/${project.slug}`)
+    }
+  }
 
   return (
     <>
@@ -21,9 +31,10 @@ export default function ProjectTable({ projects }: { projects: Project[] }): Rea
             </tr>
           </thead>
           <tbody>
-            {projects.map((project, index) => (
+            {projects.map((project) => (
               <tr 
                 key={project.company} 
+                onClick={() => handleRowClick(project)}
                 className={`
                   group
                   ${project.isPrivate ? 'text-gray-500' : ''}
@@ -37,19 +48,13 @@ export default function ProjectTable({ projects }: { projects: Project[] }): Rea
                 <td className="py-3 text-sm">{project.contributions}</td>
                 <td className="py-3 pl-8 text-right whitespace-nowrap">
                   {project.isPrivate ? (
-                    <button
-                      onClick={() => setSelectedProject(project.company)}
-                      className="text-sm text-gray-400 hover:text-gray-600 hover:underline underline-offset-4 transition-colors ml-auto inline-block"
-                    >
+                    <span className="text-sm text-gray-400 hover:text-gray-600 transition-colors ml-auto inline-block">
                       Upon Request
-                    </button>
+                    </span>
                   ) : (
-                    <Link 
-                      href={`/projects/${project.slug}`}
-                      className="text-sm hover:underline underline-offset-4 ml-auto inline-block"
-                    >
+                    <span className="text-sm group-hover:underline underline-offset-4 ml-auto inline-block">
                       View Project
-                    </Link>
+                    </span>
                   )}
                 </td>
               </tr>

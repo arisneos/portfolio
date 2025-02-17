@@ -27,11 +27,21 @@ export default function ProjectPage({ params }: Props) {
   }
 
   const getMediaSrc = (num: number) => {
-    const bases = [
-      `/images/${params.slug}/${num}`,
-      `/videos/${params.slug}/${num}`
-    ]
-    return `${bases[0]}.png`
+    // Special case for Genesis project - first media is YouTube video
+    if (params.slug === 'Genesis' && num === 1 && project.youtubeVideoId) {
+      return {
+        type: 'youtube' as const,
+        src: '', // Not needed for YouTube
+        youtubeId: project.youtubeVideoId
+      }
+    }
+
+    // For all other projects, just return the image path
+    return {
+      type: 'image' as const,
+      src: `/images/${params.slug}/${num}.jpg`,
+      youtubeId: undefined
+    }
   }
 
   return (
@@ -49,6 +59,21 @@ export default function ProjectPage({ params }: Props) {
           {/* Title Section */}
           <div className="space-y-2">
             <h1 className="text-3xl font-bold tracking-tight">{project.company}</h1>
+            {(project.links?.length ?? 0) > 0 && (
+              <div className="flex gap-4">
+                {project.links?.map((link) => (
+                  <Link
+                    key={link.url}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block text-sm text-gray-500 hover:text-gray-800 hover:underline transition-colors"
+                  >
+                    {link.label} ↗
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Project Details */}
@@ -83,13 +108,16 @@ export default function ProjectPage({ params }: Props) {
 
       {/* Right Column - Media */}
       <div className="flex-1 space-y-6">
-        {[1, 2, 3, 4].map((num) => (
-          <MediaDisplay
-            key={num}
-            src={getMediaSrc(num)}
-            alt={`${project.company} project media ${num}`}
-          />
-        ))}
+        {[1, 2, 3, 4].map((num) => {
+          const media = getMediaSrc(num)
+          return (
+            <MediaDisplay
+              key={num}
+              {...media}
+              alt={`${project.company} project media ${num}`}
+            />
+          )
+        })}
       </div>
     </div>
   )

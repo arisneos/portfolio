@@ -5,13 +5,12 @@ import Image from 'next/image'
 type MediaProps = {
   src: string
   alt: string
-  type?: 'image' | 'video' | 'gif'
+  type?: 'image' | 'youtube'
+  youtubeId?: string
 }
 
-export default function MediaDisplay({ src, alt, type = 'image' }: MediaProps) {
+export default function MediaDisplay({ src, alt, type = 'image', youtubeId }: MediaProps) {
   const [error, setError] = React.useState(false)
-  const isVideo = src.endsWith('.mp4') || src.endsWith('.webm')
-  const isGif = src.endsWith('.gif')
 
   if (error) {
     return (
@@ -23,19 +22,18 @@ export default function MediaDisplay({ src, alt, type = 'image' }: MediaProps) {
     )
   }
 
-  if (isVideo) {
+  if (type === 'youtube' && youtubeId) {
     return (
       <div className="relative aspect-video rounded-lg overflow-hidden">
-        <video 
-          className="w-full h-full object-cover"
-          controls
-          loop
-          muted
-          onError={() => setError(true)}
-        >
-          <source src={src} type={`video/${src.split('.').pop()}`} />
-          Your browser does not support the video tag.
-        </video>
+        <iframe
+          width="100%"
+          height="100%"
+          src={`https://www.youtube.com/embed/${youtubeId}`}
+          title={alt}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          className="absolute top-0 left-0 w-full h-full"
+        />
       </div>
     )
   }
@@ -43,11 +41,13 @@ export default function MediaDisplay({ src, alt, type = 'image' }: MediaProps) {
   return (
     <div className="relative aspect-video bg-gray-100 rounded-lg">
       <Image
-        src={src.startsWith('/') ? `./portfolio${src}` : src}
+        src={src}
         alt={alt}
         fill
         className="object-cover rounded-lg"
         onError={() => setError(true)}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        priority={src.includes('1.jpg')}
       />
     </div>
   )
