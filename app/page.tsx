@@ -10,8 +10,8 @@ export default function Home(): React.ReactElement {
       <section className="space-y-6">
         <h1 className="text-xl font-medium text-gray-600">Aris Neos</h1>
         <p className="text-sm text-gray-600 max-w-[640px] leading-relaxed">
-          I am a product designer & manager with over ten years of experience in creating User Experiences 
-          and managing teams. I focus on building intuitive interfaces and data-driven solutions 
+          I am a product designer & manager with over twelve years of experience in creating User Experiences 
+          and managing teams. I also like to code from time to time. I focus on simple, intuitive interfaces and data-driven solutions 
           for e-commerce, enterprise B2B - SaaS and Startups.
         </p>
         <div>
