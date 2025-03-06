@@ -25,7 +25,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     company: 'WeatherXM',
-    title: 'UX Design Lead',
+    title: 'Product Design Lead & Product Manager',
     type: '0-->1 Product',
     contributions: 'WeatherXM Pro, WeatherXM Mobile Apps',
     link: 'weatherxm',
@@ -45,7 +45,7 @@ export const projects: Project[] = [
   },
   {
     company: 'UniSystems',
-    title: 'Team Lead, UX Design',
+    title: 'Senior Product & UX Strategy Lead',
     type: 'B2B/SaaS',
     contributions: 'Led team of 5, 30% PoC acceptance rate increase in deliverables towards EU Institutions',
     link: 'unisystems',
@@ -54,7 +54,7 @@ export const projects: Project[] = [
   },
   {
     company: 'Celestino',
-    title: 'Team Lead, UX Design',
+    title: 'Lead Product Designer & Growth Strategist',
     type: 'E-Commerce',
     contributions: '10% CR increase, 7.5% user base growth, more than $1,2m in extra sales',
     link: 'celestino',
@@ -66,7 +66,7 @@ export const projects: Project[] = [
   },
   {
     company: 'Praktiker',
-    title: 'Senior UX Designer',
+    title: 'Senior UX & Digital Experience Designer',
     type: 'E-Commerce',
     contributions: 'Increased user engagement with e-commerce portal by 225%, Kept sales stable through Covid-19',
     link: 'praktiker',
@@ -78,7 +78,7 @@ export const projects: Project[] = [
   },
   {
     company: 'N.I. Minoglou',
-    title: 'UX Designer',
+    title: 'UX & Interaction Designer',
     type: 'E-Commerce',
     contributions: 'Led user research & design, increased CR by 20% yearly.',
     link: 'minoglou',
@@ -87,7 +87,7 @@ export const projects: Project[] = [
   },
   {
     company: 'Buldoza.gr',
-    title: 'Web Designer',
+    title: 'Front-End Developer & UX Engineer',
     type: 'E-Commerce',
     contributions: 'More than 5.000 successful web & newsletter campaigns & web automations. $4,2m in sales over 3 years',
     link: 'buldoza',
@@ -137,5 +137,43 @@ export const research: Research[] = [
     slug: 'covid-ecommerce-trends',
     abstract: 'Coming soon...',
     keyFindings: 'Coming soon...'
+  }
+]
+
+export type PersonalProject = {
+  title: string
+  type: string
+  description: string
+  slug: string
+  status: 'Completed' | 'In Progress' | 'TBA'
+  technologies?: string[]
+  links?: ProjectLink[]
+  duration?: string
+  challenge?: string
+  solution?: string
+  impact?: string
+  youtubeVideoId?: string
+}
+
+export const personalProjects: PersonalProject[] = [
+  {
+    title: 'PDF File Formatter',
+    type: 'Utility Tool',
+    description: 'A tool for formatting and organizing PDF files with custom templates and metadata extraction.',
+    slug: 'pdf-formatter',
+    status: 'In Progress',
+    technologies: ['React', 'TypeScript', 'PDF.js'],
+    duration: 'January 2024 - Present',
+    challenge: 'Creating a user-friendly interface for PDF manipulation that works across different file structures.',
+    solution: 'Implemented a drag-and-drop interface with live preview and template system.',
+    impact: 'Streamlined document processing workflow, reducing formatting time by 70%.'
+  },
+  {
+    title: 'Future Project',
+    type: 'TBA',
+    description: 'An exciting new project coming soon. Stay tuned for updates!',
+    slug: 'future-project',
+    status: 'TBA',
+    technologies: ['TBA']
   }
 ] 

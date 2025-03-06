@@ -1,78 +1,40 @@
 'use client'
-import React, { useState } from 'react'
-import { motion } from 'framer-motion'
+import React from 'react'
 import Link from 'next/link'
-
-const navItems = ['Projects', 'Experience', 'Skills', 'Contact'] as const
+import { usePathname } from 'next/navigation'
 
 const Header: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
+  const isHomePage = pathname === '/'
 
   return (
-    <header className="fixed w-full top-0 z-50 bg-white bg-opacity-90 backdrop-blur-sm">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Link href="/" className="text-2xl font-bold">Aris Neos</Link>
-        </motion.div>
-        
-        {/* Desktop Navigation */}
-        <nav className="hidden md:block">
-          <motion.ul
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, staggerChildren: 0.1 }}
-            className="flex space-x-6"
-          >
-            {navItems.map((item) => (
-              <motion.li key={item} whileHover={{ scale: 1.1 }}>
-                <Link 
-                  href={`#${item.toLowerCase()}`} 
-                  className="text-lg font-medium hover:text-blue-600 transition-colors"
-                >
-                  {item}
-                </Link>
-              </motion.li>
-            ))}
-          </motion.ul>
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <button 
-          onClick={() => setIsOpen(!isOpen)} 
-          className="md:hidden text-2xl"
-          aria-label="Toggle menu"
-        >
-          ☰
-        </button>
+    <header className={`${isHomePage ? 'py-16' : 'py-8'} container mx-auto px-4`}>
+      <div className="space-y-6 max-w-[640px]">
+        <h1 className="text-xl font-medium text-gray-600">
+          <Link href="/" className="hover:text-gray-900 transition-colors">
+            Aris Neos
+          </Link>
+        </h1>
+        {isHomePage && (
+          <>
+            <p className="text-sm text-gray-600 leading-relaxed">
+            I am a Product Manager with a strong foundation in UX, design, and technology.
+            With over twelve years of experience, I have led cross-functional teams to build intuitive,
+            data-driven solutions for e-commerce, enterprise B2B SaaS, and startups.
+            I bridge the gap between design, business, and engineering—turning insights
+            into scalable products. Occasionally, I still like to code.
+            </p>
+            <div>
+              <Link 
+                href="mailto:arisneos@gmail.com" 
+                className="text-sm hover:underline underline-offset-4"
+              >
+                email
+              </Link>
+            </div>
+          </>
+        )}
       </div>
-
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-white shadow-lg"
-        >
-          <ul className="py-4">
-            {navItems.map((item) => (
-              <li key={item} className="px-4 py-2">
-                <Link 
-                  href={`#${item.toLowerCase()}`} 
-                  className="text-lg font-medium hover:text-blue-600 block transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-      )}
     </header>
   )
 }
