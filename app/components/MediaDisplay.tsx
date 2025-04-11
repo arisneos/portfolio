@@ -5,12 +5,13 @@ import Image from 'next/image'
 type MediaProps = {
   src: string
   alt: string
-  type?: 'image' | 'youtube'
+  type?: 'image' | 'youtube' | 'storylane'
   youtubeId?: string
   fallbackSrcs?: string[]
+  storylaneUrl?: string
 }
 
-export default function MediaDisplay({ src, alt, type = 'image', youtubeId, fallbackSrcs = [] }: MediaProps) {
+export default function MediaDisplay({ src, alt, type = 'image', youtubeId, fallbackSrcs = [], storylaneUrl }: MediaProps) {
   const [currentSrc, setCurrentSrc] = React.useState(src)
   const [fallbackIndex, setFallbackIndex] = React.useState(0)
   const [error, setError] = React.useState(false)
@@ -32,6 +33,22 @@ export default function MediaDisplay({ src, alt, type = 'image', youtubeId, fall
         <div className="absolute inset-0 flex items-center justify-center">
           <p className="text-sm text-gray-500">Media coming soon</p>
         </div>
+      </div>
+    )
+  }
+
+  if (type === 'storylane' && storylaneUrl) {
+    return (
+      <div className="relative aspect-video rounded-lg overflow-hidden">
+        <iframe
+          width="100%"
+          height="100%"
+          src={storylaneUrl}
+          title={alt}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          className="absolute top-0 left-0 w-full h-full"
+        />
       </div>
     )
   }

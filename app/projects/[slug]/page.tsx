@@ -27,6 +27,15 @@ export default function ProjectPage({ params }: Props) {
   }
 
   const getMediaSrc = (num: number) => {
+    // Special case for WeatherXM Pro project - first media is Storylane embed
+    if (params.slug === 'weatherxm' && num === 1) {
+      return {
+        type: 'storylane' as const,
+        src: '', // Not needed for Storylane
+        storylaneUrl: 'https://app.storylane.io/demo/0cw0heips3i0?embed=inline'
+      }
+    }
+
     // Special case for Genesis project - first media is YouTube video
     if (params.slug === 'Genesis' && num === 1 && project.youtubeVideoId) {
       // Extract YouTube ID from URL
