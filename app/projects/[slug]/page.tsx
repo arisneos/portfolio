@@ -117,6 +117,7 @@ export default function ProjectPage({ params }: Props) {
             </div>
           </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
           {/* Icons Section */}
           <div className="space-y-8 pt-6 border-t border-gray-200">
@@ -177,6 +178,8 @@ export default function ProjectPage({ params }: Props) {
               </div>
             </div>
           </div>
+=======
+>>>>>>> parent of 4d5a85e (Update page.tsx)
 =======
 >>>>>>> parent of 4d5a85e (Update page.tsx)
         </div>
