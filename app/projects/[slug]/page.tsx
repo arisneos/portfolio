@@ -28,14 +28,7 @@ export default function ProjectPage({ params }: Props) {
   }
 
   const getMediaSrc = (num: number) => {
-    // Special case for WeatherXM Pro project - first media is Storylane embed
-    if (params.slug === 'weatherxm' && num === 1) {
-      return {
-        type: 'storylane' as const,
-        src: '', // Not needed for Storylane
-        storylaneUrl: 'https://app.storylane.io/demo/0cw0heips3i0?embed=inline'
-      }
-    }
+
 
     // Special case for Genesis project - first media is YouTube video
     if (params.slug === 'Genesis' && num === 1 && project.youtubeVideoId) {
@@ -169,7 +162,7 @@ export default function ProjectPage({ params }: Props) {
                   content={project.description || 'Coming soon...'}
                 />
                 <CollapsibleSection
-                  title="Challenge"
+                  title="Research"
                   content={project.challenge || 'Coming soon...'}
                 />
                 <CollapsibleSection
@@ -188,7 +181,7 @@ export default function ProjectPage({ params }: Props) {
 
       {/* Right Column - Media */}
       <div className="flex-1 space-y-6">
-        {[1, 2, 3, 4].map((num) => {
+        {[1, 2, 3, 4].filter(num => !(params.slug === 'weatherxm' && num === 4)).map((num) => {
           const media = getMediaSrc(num)
           return (
             <MediaDisplay
