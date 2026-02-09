@@ -42,17 +42,17 @@ export default function ProjectTable({ projects }: { projects: Project[] }): Rea
                   cursor-pointer
                 `}
               >
-                <td className="py-3 pr-8 text-sm">{project.company}</td>
-                <td className="py-3 pr-8 text-sm">{project.title}</td>
-                <td className="py-3 pr-8 text-sm">{project.type}</td>
-                <td className="py-3 text-sm">{project.contributions}</td>
+                <td className="py-3 pr-8 text-sm text-black font-medium">{project.company}</td>
+                <td className="py-3 pr-8 text-sm text-gray-700">{project.title}</td>
+                <td className="py-3 pr-8 text-sm text-gray-500">{project.type}</td>
+                <td className="py-3 text-sm text-gray-600">{project.contributions}</td>
                 <td className="py-3 pl-8 text-right whitespace-nowrap">
                   {project.isPrivate ? (
                     <span className="text-sm text-gray-400 hover:text-gray-600 transition-colors ml-auto inline-block">
                       Upon Request
                     </span>
                   ) : (
-                    <span className="text-sm group-hover:underline underline-offset-4 ml-auto inline-block">
+                    <span className="text-sm text-black group-hover:underline underline-offset-4 ml-auto inline-block">
                       View Project
                     </span>
                   )}

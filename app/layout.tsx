@@ -17,9 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={mono.className}>
-        <main className="container mx-auto px-4 py-8">
-          {children}
-        </main>
+        {children}
       </body>
     </html>
   )
