@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { projects } from '@/app/data/portfolio'
 import { notFound } from 'next/navigation'
 import MediaDisplay from '@/app/components/MediaDisplay'
+import CollapsibleSection from '@/app/components/CollapsibleSection'
 
 type Props = {
   params: {
@@ -21,7 +22,7 @@ export async function generateStaticParams() {
 
 export default function ProjectPage({ params }: Props) {
   const project = projects.find(p => p.link === params.slug || p.slug === params.slug)
-  
+
   if (!project) {
     notFound()
   }
@@ -50,11 +51,11 @@ export default function ProjectPage({ params }: Props) {
     // For all other projects, return the image path with basePath consideration
     const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
     const slug = params.slug.toLowerCase() // Ensure case-insensitive matching
-    
+
     // Try different extensions
     const extensions = ['.jpeg', '.jpg', '.png']
     const imagePath = `${basePath}/images/${slug}/${num}`
-    
+
     return {
       type: 'image' as const,
       src: `${imagePath}${extensions[0]}`, // Default to first extension
@@ -67,13 +68,13 @@ export default function ProjectPage({ params }: Props) {
     <div className="flex flex-col md:flex-row gap-12 max-w-[1200px]">
       {/* Left Column - Text Content */}
       <div className="flex-1 space-y-8">
-        <Link 
-          href="/" 
+        <Link
+          href="/"
           className="text-sm hover:underline"
         >
           ← Back to projects
         </Link>
-        
+
         <div className="space-y-8">
           {/* Title Section */}
           <div className="space-y-2">
@@ -162,26 +163,23 @@ export default function ProjectPage({ params }: Props) {
 
             {/* Content Sections */}
             <div className="pt-8 border-t border-gray-200">
-              <div className="space-y-6">
-                <div className="space-y-2">
-                  <h2 className="text-sm font-medium uppercase tracking-wider text-gray-500">Problem Statement</h2>
-                  <p className="text-sm text-gray-600">Coming soon...</p>
-                </div>
-
-                <div className="space-y-2">
-                  <h2 className="text-sm font-medium uppercase tracking-wider text-gray-500">Research</h2>
-                  <p className="text-sm text-gray-600">Coming soon...</p>
-                </div>
-
-                <div className="space-y-2">
-                  <h2 className="text-sm font-medium uppercase tracking-wider text-gray-500">Solution</h2>
-                  <p className="text-sm text-gray-600">Coming soon...</p>
-                </div>
-
-                <div className="space-y-2">
-                  <h2 className="text-sm font-medium uppercase tracking-wider text-gray-500">Outcome</h2>
-                  <p className="text-sm text-gray-600">Coming soon...</p>
-                </div>
+              <div className="space-y-2">
+                <CollapsibleSection
+                  title="Problem Statement"
+                  content={project.description || 'Coming soon...'}
+                />
+                <CollapsibleSection
+                  title="Challenge"
+                  content={project.challenge || 'Coming soon...'}
+                />
+                <CollapsibleSection
+                  title="Solution"
+                  content={project.solution || 'Coming soon...'}
+                />
+                <CollapsibleSection
+                  title="Outcome"
+                  content={project.impact || 'Coming soon...'}
+                />
               </div>
             </div>
           </div>

@@ -30,11 +30,83 @@ export const projects: Project[] = [
     contributions: 'WeatherXM Pro, WeatherXM Mobile Apps',
     link: 'weatherxm',
     slug: 'weatherxm',
-    duration: 'January 2024 - Present',
-    description: 'Detailed project description will go here...',
-    challenge: 'Key challenges faced...',
-    solution: 'How we solved it...',
-    impact: 'Business impact and results...',
+    duration: 'January 2024 - April 2025',
+    description: `We have already had successfully launched a decentralized weather-station network and attracted a large base of technically savvy users through its Explorer and mobile apps.
+
+However, WeatherXM Pro, the B2B offering providing API access to historical and forecast weather data, faced a critical challenge:
+
+<b>Over 1,200 free-tier users</b>
+
+<b>Zero paid conversions</b>
+
+Unclear value differentiation between plans
+Forecast quality perceived as “black box” data with no trust signals
+At the same time, advanced forecast evaluation tools existed internally, but were inaccessible, slow to surface value, and difficult to communicate to non-ML users.
+
+The core problem:
+<b>How might we turn raw weather data and complex forecast models into a product that businesses can trust, evaluate, and ultimately pay for?</b>`,
+    challenge: `<b>1. User Interviews & Surveys</b>
+Conducted 15+ interviews with free-tier users, former subscribers, and enterprise prospects
+Identified key pain points: lack of trust in forecast accuracy, difficulty evaluating model performance, unclear value proposition
+
+<b>2. Competitive Analysis</b>
+Analyzed 10+ competitors in weather data market (OpenWeather, AccuWeather, Tomorrow.io, etc.)
+Identified gaps in forecast evaluation tools, data transparency, and user experience
+
+<b>3. Data Analysis</b>
+Analyzed historical forecast data and model performance metrics
+Identified patterns in forecast accuracy and areas for improvement
+
+<b>4. User Surveys</b>
+Distributed surveys to 500+ free-tier users to gather feedback on product usage and preferences
+Received 100 responses with valuable insights into user needs and expectations`,
+    solution: `The solution was a product and pricing strategy shift, centered around Forecast Accuracy Tracking (FACT) — not as a hidden tool, but as a core product differentiator.
+
+<b>Key components:</b>
+
+<b>1. Forecast Accuracy Tracking (FACT)</b>
+- A system that evaluates forecast models over time and across locations
+- Surfaces which model performs best for which metric
+- Turns ML evaluation into a human-readable decision tool
+
+<b>2. Progressive Value Rollout</b>
+Instead of locking value behind a paywall immediately:
+- FACT was initially released across all plans as a teaser
+- Advanced capabilities unlocked progressively with higher plans
+- This allowed users to experience the value before paying
+
+<b>3. Pricing Model Redesign</b>
+- Shift from generic API tiers to per-station pricing
+- Lower barrier to entry for small users
+- Clear scalability path for enterprise customers
+
+<b>4. UX & Information Design</b>
+Designed interfaces that translated complex model performance into:
+- Clear comparisons
+- Visual confidence indicators
+- Actionable insights rather than raw numbers
+
+The product narrative shifted from “here’s weather data” to
+“here’s the most reliable forecast for your specific use case.”`,
+    impact: `<b>Business Impact</b>
+- Created a clear conversion path from free → paid
+- Reduced entry friction for smaller users while supporting enterprise scalability
+- Positioned WeatherXM Pro as a decision-support platform, not just an API
+
+<b>Product Impact</b>
+- FACT became a foundational feature rather than an add-on
+- Forecast v1 and v2 releases were aligned directly to pricing tiers
+- Internal teams gained a shared understanding of “value” beyond data volume
+
+<b>Strategic Impact</b>
+Enabled conversations with larger clients who required:
+- Transparency
+- Validation
+- Forecast accountability
+
+Laid groundwork for future concepts such as:
+- Location-based forecasting bounties
+- Demand-driven station deployment`,
     technologies: ['Figma', 'Vue.js', 'Web3'],
     isPrivate: false,
     links: [
