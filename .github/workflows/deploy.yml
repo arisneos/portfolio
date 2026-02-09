@@ -22,7 +22,7 @@ jobs:
       
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: 'npm'
           
       - name: Install dependencies
@@ -31,6 +31,7 @@ jobs:
       - name: Build with Next.js
         run: |
           export NODE_ENV=production
+          export NEXT_PUBLIC_BASE_PATH=/portfolio
           npm run build
           
       - name: Upload artifact
