@@ -15,12 +15,18 @@ type Props = {
 
 // Add this function to generate static paths
 export async function generateStaticParams() {
-  return projects
-    .filter(project => !project.isPrivate)  // Only generate pages for non-private projects
-    .map((project) => ({
-      slug: project.slug,
-    }))
+  return projects.flatMap((project) => {
+    const slugs = [project.slug]
+
+    if (project.link && project.link !== project.slug) {
+      slugs.push(project.link)
+    }
+
+    return slugs.map((slug) => ({ slug }))
+  })
 }
+
+export const dynamicParams = false
 
 export default function ProjectPage({ params }: Props) {
   const project = projects.find(p => p.link === params.slug || p.slug === params.slug)
