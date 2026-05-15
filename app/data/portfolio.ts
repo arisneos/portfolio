@@ -24,13 +24,30 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    company: 'ETraveli Group',
+    title: 'UX Lead, Pre-Booking Experience',
+    type: 'E-Commerce',
+    contributions: 'Flight Booking Funnel · Product Launches · Experimentation & Optimization',
+    link: 'etraveli',
+    slug: 'etraveli',
+    duration: 'Present',
+    isPrivate: false,
+    links: [
+      { label: 'GoToGate', url: 'https://www.gotogate.com/' },
+      { label: 'myTrip', url: 'https://gr.mytrip.com/' },
+      { label: 'Flight Network', url: 'https://gr.flightnetwork.com/' },
+      { label: 'Precision', url: 'https://www.precisionrisk.com/' }
+    ]
+  },
+  {
     company: 'WeatherXM',
-    title: 'Product Design Lead & Product Manager',
+    title: 'Product Design Lead',
     type: '0-->1 Product',
-    contributions: 'WeatherXM Pro, WeatherXM Mobile Apps',
+    contributions: 'WeatherXM Pro, FACT (Forecast Accuracy Tracking), WeatherXM Mobile Apps',
     link: 'weatherxm',
     slug: 'weatherxm',
     duration: 'January 2024 - April 2025',
+<<<<<<< Updated upstream
     description: `We have already had successfully launched a decentralized weather-station network and attracted a large base of technically savvy users through its Explorer and mobile apps.
 
 However, WeatherXM Pro, the B2B offering providing API access to historical and forecast weather data, faced a critical challenge:
@@ -107,6 +124,12 @@ Enabled conversations with larger clients who required:
 Laid groundwork for future concepts such as:
 - Location-based forecasting bounties
 - Demand-driven station deployment`,
+=======
+    description: 'Detailed project description will go here...',
+    challenge: 'Key challenges faced...',
+    solution: 'How we solved it...',
+    impact: 'Business impact and results...',
+>>>>>>> Stashed changes
     technologies: ['Figma', 'Vue.js', 'Web3'],
     isPrivate: false,
     links: [
@@ -117,7 +140,7 @@ Laid groundwork for future concepts such as:
   },
   {
     company: 'UniSystems',
-    title: 'Senior Product & UX Strategy Lead',
+    title: 'Senior Product/UX Designer',
     type: 'B2B/SaaS',
     contributions: 'Led team of 5, 30% PoC acceptance rate increase in deliverables towards EU Institutions',
     link: 'unisystems',
@@ -126,7 +149,7 @@ Laid groundwork for future concepts such as:
   },
   {
     company: 'Celestino',
-    title: 'Lead Product Designer & Growth Strategist',
+    title: 'Senior UX Designer & Researcher',
     type: 'E-Commerce',
     contributions: '10% CR increase, 7.5% user base growth, more than $1,2m in extra sales',
     link: 'celestino',
@@ -138,7 +161,7 @@ Laid groundwork for future concepts such as:
   },
   {
     company: 'Praktiker',
-    title: 'Senior UX & Digital Experience Designer',
+    title: 'Product Designer, Web & Mobile',
     type: 'E-Commerce',
     contributions: 'Increased user engagement with e-commerce portal by 225%, Kept sales stable through Covid-19',
     link: 'praktiker',
@@ -150,7 +173,7 @@ Laid groundwork for future concepts such as:
   },
   {
     company: 'N.I. Minoglou',
-    title: 'UX & Interaction Designer',
+    title: 'UX Designer, Web',
     type: 'E-Commerce',
     contributions: 'Led user research & design, increased CR by 20% yearly.',
     link: 'minoglou',
@@ -159,7 +182,7 @@ Laid groundwork for future concepts such as:
   },
   {
     company: 'Buldoza.gr',
-    title: 'Front-End Developer & UX Engineer',
+    title: 'UX Engineer, Web',
     type: 'E-Commerce',
     contributions: 'More than 5.000 successful web & newsletter campaigns & web automations. $4,2m in sales over 3 years',
     link: 'buldoza',

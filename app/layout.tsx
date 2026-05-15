@@ -6,7 +6,7 @@ const mono = JetBrains_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Aris Neos',
-  description: 'Product Manager, UX & Growth Portfolio',
+  description: 'UX & Product Design Lead Portfolio',
 }
 
 export default function RootLayout({

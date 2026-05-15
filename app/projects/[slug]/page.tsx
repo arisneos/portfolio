@@ -28,7 +28,10 @@ export default function ProjectPage({ params }: Props) {
   }
 
   const getMediaSrc = (num: number) => {
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
     // Special case for Genesis project - first media is YouTube video
     if (params.slug === 'Genesis' && num === 1 && project.youtubeVideoId) {
