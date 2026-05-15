@@ -28,11 +28,6 @@ export default function ProjectPage({ params }: Props) {
   }
 
   const getMediaSrc = (num: number) => {
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
-
     // Special case for Genesis project - first media is YouTube video
     if (params.slug === 'Genesis' && num === 1 && project.youtubeVideoId) {
       // Extract YouTube ID from URL
@@ -119,8 +114,6 @@ export default function ProjectPage({ params }: Props) {
               <p className="text-sm">{project.contributions}</p>
             </div>
           </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
 
           {/* Icons Section */}
           <div className="space-y-8 pt-6 border-t border-gray-200">
@@ -181,10 +174,6 @@ export default function ProjectPage({ params }: Props) {
               </div>
             </div>
           </div>
-=======
->>>>>>> parent of 4d5a85e (Update page.tsx)
-=======
->>>>>>> parent of 4d5a85e (Update page.tsx)
         </div>
       </div>
 

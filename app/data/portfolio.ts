@@ -47,7 +47,6 @@ export const projects: Project[] = [
     link: 'weatherxm',
     slug: 'weatherxm',
     duration: 'January 2024 - April 2025',
-<<<<<<< Updated upstream
     description: `We have already had successfully launched a decentralized weather-station network and attracted a large base of technically savvy users through its Explorer and mobile apps.
 
 However, WeatherXM Pro, the B2B offering providing API access to historical and forecast weather data, faced a critical challenge:
@@ -124,12 +123,6 @@ Enabled conversations with larger clients who required:
 Laid groundwork for future concepts such as:
 - Location-based forecasting bounties
 - Demand-driven station deployment`,
-=======
-    description: 'Detailed project description will go here...',
-    challenge: 'Key challenges faced...',
-    solution: 'How we solved it...',
-    impact: 'Business impact and results...',
->>>>>>> Stashed changes
     technologies: ['Figma', 'Vue.js', 'Web3'],
     isPrivate: false,
     links: [
