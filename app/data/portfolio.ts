@@ -234,6 +234,7 @@ export type PersonalProject = {
   description: string
   slug: string
   status: 'Completed' | 'In Progress' | 'TBA'
+  isPrivate?: boolean
   technologies?: string[]
   links?: ProjectLink[]
   duration?: string
@@ -250,6 +251,7 @@ export const personalProjects: PersonalProject[] = [
     description: 'A tool for formatting and organizing PDF files with custom templates and metadata extraction.',
     slug: 'pdf-formatter',
     status: 'In Progress',
+    isPrivate: true,
     technologies: ['React', 'TypeScript', 'PDF.js'],
     duration: 'January 2024 - Present',
     challenge: 'Creating a user-friendly interface for PDF manipulation that works across different file structures.',
@@ -257,11 +259,12 @@ export const personalProjects: PersonalProject[] = [
     impact: 'Streamlined document processing workflow, reducing formatting time by 70%.'
   },
   {
-    title: 'Future Project',
+    title: 'OpenTab',
     type: 'TBA',
-    description: 'An exciting new project coming soon. Stay tuned for updates!',
+    description: 'A passion project that helps you manage your company\'s invoices and payments.',
     slug: 'future-project',
     status: 'TBA',
+    isPrivate: true,
     technologies: ['TBA']
   }
 ] 

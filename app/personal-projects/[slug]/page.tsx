@@ -11,9 +11,11 @@ type Props = {
 }
 
 export async function generateStaticParams() {
-  return personalProjects.map((project) => ({
-    slug: project.slug,
-  }))
+  return personalProjects
+    .filter((project) => !project.isPrivate)
+    .map((project) => ({
+      slug: project.slug,
+    }))
 }
 
 export default function PersonalProjectPage({ params }: Props) {

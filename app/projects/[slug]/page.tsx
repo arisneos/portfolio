@@ -4,6 +4,8 @@ import { projects } from '@/app/data/portfolio'
 import { notFound } from 'next/navigation'
 import MediaDisplay from '@/app/components/MediaDisplay'
 import CollapsibleSection from '@/app/components/CollapsibleSection'
+import Header from '@/app/components/Header'
+import PageContainer from '@/app/components/PageContainer'
 
 type Props = {
   params: {
@@ -56,7 +58,10 @@ export default function ProjectPage({ params }: Props) {
   }
 
   return (
-    <div className="flex flex-col md:flex-row gap-12 max-w-[1200px]">
+    <main className="min-h-screen">
+      <Header />
+      <PageContainer className="py-8">
+        <div className="flex flex-col gap-12 md:flex-row">
       {/* Left Column - Text Content */}
       <div className="flex-1 space-y-8">
         <Link
@@ -190,6 +195,8 @@ export default function ProjectPage({ params }: Props) {
           )
         })}
       </div>
-    </div>
+        </div>
+      </PageContainer>
+    </main>
   )
 }

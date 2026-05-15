@@ -31,21 +31,21 @@ export default function ProjectTable({ projects }: { projects: Project[] }): Rea
             </tr>
           </thead>
           <tbody>
-            {projects.map((project) => (
+            {projects.map((project) => {
+              const isPrivate = project.isPrivate
+              return (
               <tr 
                 key={project.company} 
                 onClick={() => handleRowClick(project)}
                 className={`
-                  group
-                  ${project.isPrivate ? 'text-gray-500' : ''}
-                  ${!project.isPrivate ? 'hover:bg-gray-50 hover:transform hover:-translate-y-1 hover:shadow-lg transition-all duration-200' : ''}
-                  cursor-pointer
+                  group cursor-pointer
+                  ${!isPrivate ? 'hover:bg-gray-50 hover:transform hover:-translate-y-1 hover:shadow-lg transition-all duration-200' : ''}
                 `}
               >
-                <td className="py-3 pr-8 text-sm text-black font-medium">{project.company}</td>
-                <td className="py-3 pr-8 text-sm text-gray-700">{project.title}</td>
-                <td className="py-3 pr-8 text-sm text-gray-500">{project.type}</td>
-                <td className="py-3 text-sm text-gray-600">{project.contributions}</td>
+                <td className={`py-3 pr-8 text-sm font-medium ${isPrivate ? 'text-gray-400' : 'text-black'}`}>{project.company}</td>
+                <td className={`py-3 pr-8 text-sm ${isPrivate ? 'text-gray-400' : 'text-gray-700'}`}>{project.title}</td>
+                <td className={`py-3 pr-8 text-sm ${isPrivate ? 'text-gray-400' : 'text-gray-500'}`}>{project.type}</td>
+                <td className={`py-3 text-sm ${isPrivate ? 'text-gray-400' : 'text-gray-600'}`}>{project.contributions}</td>
                 <td className="py-3 pl-8 text-right whitespace-nowrap">
                   {project.isPrivate ? (
                     <span className="text-sm text-gray-400 hover:text-gray-600 transition-colors ml-auto inline-block">
@@ -58,7 +58,7 @@ export default function ProjectTable({ projects }: { projects: Project[] }): Rea
                   )}
                 </td>
               </tr>
-            ))}
+            )})}
           </tbody>
         </table>
       </div>

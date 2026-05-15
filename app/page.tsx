@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from './components/Header'
+import PageContainer from './components/PageContainer'
 import ProjectTable from './components/ProjectTable'
 import ResearchTable from './components/ResearchTable'
 import PersonalProjectTable from './components/PersonalProjectTable'
@@ -9,7 +10,7 @@ export default function Home(): React.ReactElement {
   return (
     <main className="min-h-screen">
       <Header />
-      <div className="container mx-auto px-4 py-8">
+      <PageContainer className="py-8">
         <section className="mb-16">
           <h2 className="text-2xl font-semibold mb-6">Projects</h2>
           <ProjectTable projects={projects} />
@@ -24,7 +25,7 @@ export default function Home(): React.ReactElement {
           <h2 className="text-2xl font-semibold mb-6">Research</h2>
           <ResearchTable research={research} />
         </section>
-      </div>
+      </PageContainer>
     </main>
   )
 } 
