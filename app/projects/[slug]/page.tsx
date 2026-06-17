@@ -167,19 +167,19 @@ export default function ProjectPage({ params }: Props) {
             <div className="pt-8 border-t border-gray-200">
               <div className="space-y-2">
                 <CollapsibleSection
-                  title="Problem Statement"
+                  title={project.sectionTitles?.description || "Problem Statement"}
                   content={project.description || 'Coming soon...'}
                 />
                 <CollapsibleSection
-                  title="Research"
+                  title={project.sectionTitles?.challenge || "Research"}
                   content={project.challenge || 'Coming soon...'}
                 />
                 <CollapsibleSection
-                  title="Solution"
+                  title={project.sectionTitles?.solution || "Solution"}
                   content={project.solution || 'Coming soon...'}
                 />
                 <CollapsibleSection
-                  title="Outcome"
+                  title={project.sectionTitles?.impact || "Outcome"}
                   content={project.impact || 'Coming soon...'}
                 />
               </div>

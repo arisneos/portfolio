@@ -3,6 +3,13 @@ export type ProjectLink = {
   url: string
 }
 
+export type ProjectSectionTitles = {
+  description?: string
+  challenge?: string
+  solution?: string
+  impact?: string
+}
+
 export type Project = {
   company: string
   title: string
@@ -20,6 +27,7 @@ export type Project = {
   projectUrl?: string
   links?: ProjectLink[]
   youtubeVideoId?: string
+  sectionTitles?: ProjectSectionTitles
 }
 
 export const projects: Project[] = [
@@ -37,7 +45,48 @@ export const projects: Project[] = [
       { label: 'myTrip', url: 'https://gr.mytrip.com/' },
       { label: 'Flight Network', url: 'https://gr.flightnetwork.com/' },
       { label: 'Precision', url: 'https://www.precisionrisk.com/' }
-    ]
+    ],
+    sectionTitles: {
+      description: 'Context',
+      challenge: 'Challenges',
+      solution: 'Contributions',
+      impact: 'Impact'
+    },
+    description: `ETG Group is one of the world's leading travel technology companies, operating brands such as GoToGate, myTrip, Flight Network, and other travel platforms serving millions of travelers globally.
+
+As UX Lead for the Pre-Booking Experience domain, I worked across product strategy, experience design, experimentation, and team enablement to improve critical customer journeys before purchase.
+
+My role extended beyond interface design and included cross-functional collaboration with Product, Engineering, Analytics, and Business stakeholders to help align customer needs with business objectives.`,
+    challenge: `Operating at scale introduced a unique set of challenges:
+
+• Balancing short-term business goals with long-term experience quality
+• Supporting multiple product initiatives across a high-traffic booking ecosystem
+• Creating alignment between UX, Product, Engineering, and Analytics teams
+• Establishing measurable UX outcomes through experimentation and KPI tracking
+• Improving design quality and delivery consistency across teams
+• Exploring how AI-assisted workflows could accelerate research, prototyping, and knowledge sharing
+
+The challenge was not only designing better experiences, but helping create the conditions that allowed teams to consistently deliver them.`,
+    solution: `<b>Product & Experience</b>
+• Led UX initiatives across critical pre-booking journeys
+• Contributed to multiple product launches and customer-facing improvements
+• Partnered with Product Managers and Engineers to define solutions balancing user needs and business goals
+
+<b>Strategy & Optimization</b>
+• Helped define and track UX and business KPIs
+• Supported experimentation initiatives and funnel optimization efforts
+• Facilitated workshops and alignment sessions to improve decision-making
+
+<b>Team & Operations</b>
+• Mentored designers and supported design reviews across initiatives
+• Introduced AI-assisted workflows for research, ideation, and prototyping
+• Established UX health checks, quality reviews, and release readiness practices
+• Helped translate company-level objectives into actionable UX priorities`,
+    impact: `• Contributed to the successful launch of multiple products and customer experiences
+• Improved collaboration and alignment between UX, Product, and Engineering teams
+• Increased adoption of AI-assisted workflows across the UX organization
+• Helped establish scalable processes for design quality and delivery
+• Supported measurable business outcomes through optimization and experimentation initiatives`
   },
   {
     company: 'WeatherXM',
